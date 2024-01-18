@@ -1,0 +1,37 @@
+<div class="team-selection-container">
+  <div class="character-card" *ngFor="let character of characters">
+    <div class="character-thumbnail">
+      <img [src]="character.thumbnail.path + '.' + character.thumbnail.extension" alt="{{ character.name }}"/>
+    </div>
+    <div class="character-details">
+      <h3>{{ character.name }}</h3>
+      <p>{{ character.description || 'No description available' }}</p>
+
+      <div class="action-container">
+        <mat-form-field appearance="fill" class="position-select">
+          <mat-label>Select Position</mat-label>
+          <mat-select [(ngModel)]="character.position" name="position">
+            <mat-option value="GK">Goalkeeper</mat-option>
+            <mat-option value="ST">Striker</mat-option>
+            <mat-option value="MD">Midfielder</mat-option>
+            <mat-option value="DF">Defender</mat-option>
+            <mat-option value="OF">Outfield (ST, MD, DF)</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="addToTeam(character)">Add to Team</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="selected-team">
+    <h2>Selected Team</h2>
+    <div *ngFor="let player of selectedTeam; let i = index">
+      <div class="selected-item">
+        <p>{{ player.name }} - {{ player.position }}</p>
+        <button style="margin-left: 20px;" mat-raised-button color="warn" (click)="removeFromTeam(i)">Remove</button>
+      </div>
+    </div>
+    <p>Total Players in Team: {{ selectedTeam.length }}</p>
+  </div>
+</div>

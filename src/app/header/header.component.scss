@@ -1,0 +1,50 @@
+/* src/app/header/header.component.scss */
+
+.app-header {
+  mat-toolbar {
+    background-color: red; /* Replace with the actual color code for Marvel Red */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .marvel-logo {
+    height: 40px; /* Adjust the height of the logo as needed */
+    margin-right: 10px; /* Add some spacing between the logo and the title */
+  }
+  .app-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white; /* Set the title color to white */
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .nav-divider {
+    margin: 0 10px; /* Adjust the margin between navigation items */
+  }
+
+  nav {
+    a {
+      color: white; /* Set the link color to white */
+      transition: color 0.3s ease; /* Add a transition effect for the link color */
+      outline: none; /* Remove default focus outline */
+      padding: 10px; /* Add padding to improve focus visibility */
+      border-radius: 5px; /* Add border-radius for a rounded appearance */
+    }
+
+    a:hover {
+      color: lighten(red, 10%); /* Lighten the link color on hover */
+    }
+
+    a:active,
+    .active-link {
+      background-color: darken(red, 10%); /* Darken the active link background */
+      color: white; /* Set the active link color to white */
+    }
+
+    a:focus {
+      background-color: darken(red, 10%); /* Change the focus outline color */
+      color: white; /* Set the focused link color to white */
+    }
+  }
+}

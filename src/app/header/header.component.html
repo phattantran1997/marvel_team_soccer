@@ -1,0 +1,24 @@
+<!-- src/app/header/header.component.html -->
+
+<header class="app-header">
+  <mat-toolbar color="marvel-red"> <!-- Use a custom color name for Marvel Red -->
+    <mat-toolbar-row>
+      <img src="assets/marvel-logo.png" alt="Marvel Logo" class="marvel-logo">
+      <span class="app-title">Marvel App</span>
+      <span class="spacer"></span>
+      <nav mat-tab-nav-bar>
+        <a mat-tab-link routerLink="/character-list" routerLinkActive="active-link">
+          Character List
+        </a>
+        <span class="nav-divider"></span>
+        <a mat-tab-link routerLink="/team-selection" routerLinkActive="active-link">
+          Team Selection
+        </a>
+        <span class="nav-divider"></span>
+        <a mat-tab-link routerLink="/chosen-team" routerLinkActive="active-link">
+          Chosen Team
+        </a>
+      </nav>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>

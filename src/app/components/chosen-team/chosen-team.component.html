@@ -1,0 +1,8 @@
+<!-- src/app/chosen-team/chosen-team.component.html -->
+
+<div class="chosen-team-container">
+  <h2>Chosen Team</h2>
+  <div *ngFor="let player of this.selectedTeam">
+    <p>{{ player.name }} - {{ player.position }}</p>
+  </div>
+</div>
